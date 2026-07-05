@@ -28,7 +28,7 @@ export const useSidebarStore = create<SidebarStore>()(
         }),
     }),
     {
-      name: "jabali-sidebar",
+      name: "KITU-sidebar",
       onRehydrateStorage: () => (state) => {
         state?.setHydrated();
       },

@@ -27,7 +27,7 @@ export default function ChatInput({ loading, onSend }: Props) {
             minRows={1}
             maxRows={8}
             value={message}
-            placeholder="Ask Jabali AI anything..."
+            placeholder="Ask KITU AI anything..."
             onChange={(e) => setMessage(e.target.value)}
             onKeyDown={(e) => {
               if (e.key === "Enter" && !e.shiftKey) {
