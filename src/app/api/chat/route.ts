@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { ai } from "@/lib/gemini";
+import { SYSTEM_PROMPT } from "@/lib/system-prompt";
 
 export async function POST(request: Request) {
   try {
@@ -18,9 +19,13 @@ export async function POST(request: Request) {
 
     const response = await ai.models.generateContentStream({
       model: "gemini-2.5-flash",
+
+      config: {
+        systemInstruction: SYSTEM_PROMPT,
+      },
+
       contents: geminiMessages,
     });
-
     const encoder = new TextEncoder();
 
     const stream = new ReadableStream({
